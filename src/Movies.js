@@ -17,7 +17,6 @@ const Movies = () => {
   const mapMovies = movies.map((movie) => {
     return (
       <div key={movie.id} className="container">
-        <h1>Helloo hello</h1>
         <div className="movie-cont">
           <div className="image-cont">
             <img
