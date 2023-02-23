@@ -1,0 +1,65 @@
+body {
+  margin: 50px;
+  background: rgb(241,235,40);
+  background: linear-gradient(0deg, rgba(241,235,40,1) 0%, rgba(45,161,95,1) 100%); 
+}
+
+.image-cont {
+  height: 450px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 400px;
+  width: 200px;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.image:hover {
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 460px;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hOne {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pOne {
+  background-color: rgb(247, 126, 126);
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+
+}
