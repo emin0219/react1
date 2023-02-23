@@ -1,8 +1,42 @@
 import { useEffect,useState } from "react"
+import Modal from 'react-modal';
 const image_url = "https://image.tmdb.org/t/p/w500/";
 
+const customStyles = {
+  content: {
+    backgroundColor: "red",
+    color: "red",
+    height: "700px",
+    width:"1000px",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    border: "2px red",
+    padding: "0",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  overlay: {
+    position: "fixed",
+    backgroundColor: "black"
+  }
+};
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+
+  const[isModalOpen, setModal] = useState(false)
+
+  const openModal = () => {
+    setModal(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
 
   async function getMovies() {
     const response = await fetch(
@@ -14,10 +48,12 @@ const Movies = () => {
     console.log(data);
   }
 
+
+
   const mapMovies = movies.map((movie) => {
     return (
-      <div key={movie.id} className="container">
-        <div className="movie-cont">
+      <div key={movie?.id} className="container">
+        <div className="movie-cont" onClick={openModal} >
           <div className="image-cont">
             <img
               className="image"
@@ -36,7 +72,18 @@ const Movies = () => {
   }, [movies]);
 
   return (
-    <div className="App">{mapMovies}</div>
+    <div className="App">
+      
+      {mapMovies}
+      <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={customStyles}>
+         <div className="modalContent" >
+         <img
+              className="image"
+              src={`${image_url}${movie?.poster_path}`}
+            />
+         </div>
+      </Modal>
+      </div>
   )
 }
 

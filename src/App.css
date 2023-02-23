@@ -63,3 +63,11 @@ body {
   border-radius: 5px;
 
 }
+
+.modalContent {
+  background-color: aqua;
+  height: 98%;
+  width: 98%;
+  display: flex;
+  padding: 0;
+}
