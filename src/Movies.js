@@ -79,7 +79,7 @@ const Movies = () => {
          <div className="modalContent" >
          <img
               className="image"
-              src={`${image_url}${movies?.poster_path}`}
+              src={`${image_url}${movie?.poster_path}`}
             />
          </div>
       </Modal>
